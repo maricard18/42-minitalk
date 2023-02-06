@@ -6,7 +6,7 @@
 #    By: maricard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 16:59:07 by maricard          #+#    #+#              #
-#    Updated: 2023/02/06 11:32:07 by maricard         ###   ########.fr        #
+#    Updated: 2023/02/06 13:18:18 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstclear.c ft_lstmap.c
 BONUS-OBJ = $(BONUS:.c=.o)
 
 %.o:		%.c
-			$(CC) -c $(CFLAGS) $^
+			$(CC) -c $(CFLAGS) $^ -o $@
 
 all:		$(NAME)
 		
@@ -54,7 +54,3 @@ fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean $(NAME)
-
-so:
-			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS)
-			gcc -nostartfiles -shared -o libft.so $(SRC-OBJ) $(BONUS-OBJ)
