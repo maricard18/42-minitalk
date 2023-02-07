@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 08:43:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/06 11:35:30 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:15:35 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,20 @@ void	send_signal(int pid, char *str)
 	int	i;
 	int	c;
 
-	i = 0;
 	while (*str)
 	{
 		c = *str;
+		i = 0;
 		while (i < 8)
 		{
-			if ((c & (1 << i)) == 0)
-				kill(pid, SIGUSR1);
-			else
+			if (1 & (c >> i))
 				kill(pid, SIGUSR2);
+			else
+				kill(pid, SIGUSR1);
 			usleep(100);
-		i++;
+			i++;
 		}
 		str++;
-		i = 0;
 	}
 }
 
