@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 08:43:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/08 12:30:52 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:57:40 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,7 @@ void	send_signal(int pid, char *str)
 		while (i < 8)
 		{
 			if (1 & (c >> i))
-			{
-				if(kill(pid, SIGUSR2) == -1)
-				{
-					ft_printf("Error\n");
-					exit(-1);
-				}
-			}
+				kill(pid, SIGUSR2);
 			else
 				kill(pid, SIGUSR1);
 			usleep(100);
@@ -48,7 +42,7 @@ void	send_signal(int pid, char *str)
 void	server_signal(int signal)
 {
 	if (signal == SIGUSR2)
-		ft_printf("\nMESSAGE RECEIVED SUCCESSFULLY\n");
+		ft_printf("\n*** MESSAGE RECEIVED ***\n\n");
 }
 
 int	main(int argc, char **argv)
@@ -65,8 +59,6 @@ int	main(int argc, char **argv)
 		ft_printf("Please try doing this task right.\n");
 	}
 	else
-	{
 		send_signal(ft_atoi(argv[1]), argv[2]);
-	}
 	return (0);
 }
