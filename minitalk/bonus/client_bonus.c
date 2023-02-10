@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 08:43:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/10 10:42:51 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/10 10:50:41 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,10 @@ int	main(int argc, char **argv)
 	sigaction(SIGUSR2, &sa, NULL);
 	if (argc != 3)
 	{
+		ft_printf("\n❌ ❌ ❌\n");
 		ft_printf("Client must receive 2 parameters: <PID> & <STRING>.\n");
 		ft_printf("Example: 90345 hello\n");
-		ft_printf("Please try agian\n");
+		ft_printf("Please try agian\n\n");
 	}
 	else
 		send_signal(ft_atoi(argv[1]), argv[2]);
