@@ -6,7 +6,7 @@
 #    By: maricard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 16:59:07 by maricard          #+#    #+#              #
-#    Updated: 2023/02/06 13:18:18 by maricard         ###   ########.fr        #
+#    Updated: 2023/02/10 09:02:45 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,6 @@ $(NAME):	$(SRC-OBJ)
 
 bonus:		$(NAME) $(BONUS-OBJ)
 			ar rs $(NAME) $(BONUS-OBJ)
-			touch bonus
 
 clean:
 			$(RM) $(SRC-OBJ) $(BONUS-OBJ)
