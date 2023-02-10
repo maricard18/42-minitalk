@@ -6,7 +6,7 @@
 #    By: maricard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 08:41:40 by maricard          #+#    #+#              #
-#    Updated: 2023/02/10 09:45:55 by maricard         ###   ########.fr        #
+#    Updated: 2023/02/10 11:36:56 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ clean:
 	$(RM) $(OBJ-SERVER) $(OBJ-CLIENT)
 	$(RM) $(OBJ-SERVER-BONUS) $(OBJ-CLIENT-BONUS)
 
-fclean:
+fclean: clean
 	$(MAKE) fclean -C ./libft
 	$(RM) $(SERVER) $(CLIENT)
 	$(RM) $(SERVER-BONUS) $(CLIENT-BONUS)
