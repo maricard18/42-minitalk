@@ -6,7 +6,7 @@
 /*   By: maricard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 08:43:07 by maricard          #+#    #+#             */
-/*   Updated: 2023/02/10 09:34:02 by maricard         ###   ########.fr       */
+/*   Updated: 2023/02/13 08:44:10 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	main(int argc, char **argv)
 {
 	if (argc != 3)
 	{
-		ft_printf("Client must receive 2 parameters: <PID> & <STRING>.\n");
+		ft_printf("\nClient must receive 2 parameters: <PID> & <STRING>.\n");
 		ft_printf("Example: '12345' 'Hello :)'\n");
-		ft_printf("Please try doing this task right.\n");
+		ft_printf("Please try doing this task right.\n\n");
 	}
 	else
 		send_signal(ft_atoi(argv[1]), argv[2]);
